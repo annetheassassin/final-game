@@ -1,67 +1,48 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
- 
-public class waveSpawner : MonoBehaviour
+using System.Collections;
+using UnityEngine.UI;
+
+public class WaveSpawner : MonoBehaviour
 {
-    public Wave[] waves;
- 
-    private Wave currentWave;
- 
-    [SerializeField]
-    private Transform[] spawnpoints;
- 
-    private float timeBtwnSpawns;
-    private int i = 0;
- 
-    private bool stopSpawning = false;
- 
-    private void Awake()
+
+    public Transform enemyPrefab;
+
+    public Transform spawnPoint;
+
+    public float timeBetweenWaves = 5f;
+    private float countdown = 2f;
+
+    public Text waveCountDownText;
+
+    private int waveIndex = 0;
+
+    void Update () 
     {
- 
-        currentWave = waves[i];
-        timeBtwnSpawns = currentWave.TimeBeforeThisWave;
-    }
- 
-    private void FixedUpdate()
-    {
-        if(stopSpawning)
+        if (countdown <= 0f)
         {
-            return;
+            StartCoroutine(SpawnWave());
+            countdown = timeBetweenWaves;
         }
- 
-        if (Time.time >= timeBtwnSpawns)
-        {
-            SpawnWave();
-            IncWave();
- 
-            timeBtwnSpawns = Time.time + currentWave.TimeBeforeThisWave;
-        }
+
+        countdown -= Time.deltaTime;
+
+        waveCountDownText.text = Mathf.Floor(countdown).ToString();
     }
- 
-    private void SpawnWave()
+
+    IEnumerator SpawnWave ()
     {
-        for (int i = 0; i < currentWave.numberToSpawn; i++)
+        waveIndex++;
+
+        for (int i = 0; i < waveIndex; i++)
         {
-            int num = Random.Range(0, currentWave.EnemiesInWave.Length);
-            new WaitForSeconds(1);
-            int num2 = Random.Range(0, spawnpoints.Length);
- 
-            Instantiate(currentWave.EnemiesInWave[num], spawnpoints[num2].position, spawnpoints[num2].rotation);
-         
+            SpawnEnemy(); 
+            yield return new WaitForSeconds(1f);
         }
     }
- 
-    private void IncWave()
+
+    void SpawnEnemy()
     {
-        if (i + 1 < waves.Length)
-        {
-            i++;
-            currentWave = waves[i];
-        }
-        else
-        {
-            stopSpawning = true;
-        }
+        Instantiate(enemyPrefab, spawnPoint.position, spawnPoint.rotation);
     }
+
 }
