@@ -15,13 +15,17 @@ public class buildmanager : MonoBehaviour
     }
 
     public GameObject sintprefab;
-    void Start()
-    {
-        TurretTobuild = sintprefab;
-    }
+    public GameObject Level4piet;
+    public GameObject Level1piet;
+    public GameObject Level2piet;
+    public GameObject Level3piet;
     private GameObject TurretTobuild;
     public GameObject GetTurrentTobluid ()
     {
         return TurretTobuild;
+    }
+    public void SetTurrentToBuild(GameObject Tower)
+    {
+        TurretTobuild= Tower;
     }
 }
