@@ -8890,6 +8890,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9fedbf31676ab7746a880aa7e6834c0e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  waves: []
+  enemyPrefab: {fileID: 149944603870611867, guid: d8092fb3fb812464db932de098cd14a4, type: 3}
+  spawnPoint: {fileID: 28700944}
+  timeBetweenWaves: 5
+  waveCountDownText: {fileID: 978804073}
 --- !u!114 &1314887188
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8903,7 +8908,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sintprefab: {fileID: 0}
-  TurretTobuild: {fileID: 0}
+  Level4piet: {fileID: 0}
+  Level1piet: {fileID: 0}
+  Level2piet: {fileID: 0}
+  Level3piet: {fileID: 0}
 --- !u!1 &1323696411
 GameObject:
   m_ObjectHideFlags: 0

@@ -7,5 +7,4 @@ public class Wave{
     public int count;
     public float rate;
 
-    
 }
