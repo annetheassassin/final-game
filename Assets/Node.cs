@@ -1,18 +1,27 @@
 using System.Collections;
-using System.Collections.Generic;
+
 using UnityEngine;
 
 public class Node : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    private GameObject turret;
+    buildmanager buildmanager;
+     void Start()
     {
-        
+        buildmanager = buildmanager.instance;
     }
-
-    // Update is called once per frame
-    void Update()
+    void OnMouseDown()
     {
-        
+        if (buildmanager.GetTurrentTobluid() == null) 
+        return; 
+
+        if(turret != null)
+        {
+            Debug.Log("cant place here");
+            return;
+        }
+        GameObject turrentToBuilt = buildmanager.GetTurrentTobluid();
+        turret = (GameObject) Instantiate(turrentToBuilt, transform.position, transform.rotation);
+
     }
 }
