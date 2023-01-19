@@ -12,26 +12,26 @@ public class shop1 : MonoBehaviour
     public void PurchasesintTurret ()
     {
         Debug.Log("sint bought");
-      buildmanager.SetTurrentToBuild(buildmanager.sintprefab);
+      buildmanager.SetTowerToBuild(buildmanager.sintprefab);
     }
    public void purchaseLevel1piet()
     {
         Debug.Log("pietlevel1 bought");
-      buildmanager.SetTurrentToBuild(buildmanager.Level1piet);
+      buildmanager.SetTowerToBuild(buildmanager.Level1piet);
     }
     public void purchaseLevel2piet()
     {
         Debug.Log("pietlevel2 bought");
-       buildmanager.SetTurrentToBuild(buildmanager.Level2piet);
+       buildmanager.SetTowerToBuild(buildmanager.Level2piet);
     }
     public void purchaseLevel3piet()
     {
         Debug.Log("pietlevel3 bought");
-       buildmanager.SetTurrentToBuild(buildmanager.Level3piet);
+       buildmanager.SetTowerToBuild(buildmanager.Level3piet);
     }
     public void purchaseLevel4piet()
     {
         Debug.Log("pietlevel4 bought");
-       buildmanager.SetTurrentToBuild(buildmanager.Level4piet);
+       buildmanager.SetTowerToBuild(buildmanager.Level4piet);
     }
 }
