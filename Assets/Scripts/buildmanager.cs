@@ -1,14 +1,14 @@
 
 using UnityEngine;
 
-public class buildmanager : MonoBehaviour
+public class buildManager : MonoBehaviour
 {
-    public static buildmanager instance;
+    public static buildManager instance;
     void Awake ()
     {
         if (instance != null)
         {
-            Debug.LogError("more than one builmaneger");
+            Debug.LogError("more than one buildmaneger");
             return;
         }
     instance = this;
@@ -20,7 +20,7 @@ public class buildmanager : MonoBehaviour
     public GameObject Level2piet;
     public GameObject Level3piet;
     private GameObject TowerTobuild;
-    public GameObject GetTowerTobluid ()
+    public GameObject GetTowerTobuild ()
     {
         return TowerTobuild;
     }
