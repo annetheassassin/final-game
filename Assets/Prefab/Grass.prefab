@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 6762770175608540687}
   - component: {fileID: 5588429392715528030}
   m_Layer: 0
-  m_Name: grass
+  m_Name: Grass
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -98,6 +98,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 096d9474fdbeee24d895d99b74e00c15, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  currentturret: {fileID: 0}
+  positionOffset: {x: 0, y: 0, z: 0}
 --- !u!65 &5588429392715528030
 BoxCollider:
   m_ObjectHideFlags: 0
