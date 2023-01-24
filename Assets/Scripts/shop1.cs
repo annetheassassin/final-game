@@ -3,7 +3,13 @@ using UnityEngine;
 
 public class shop1 : MonoBehaviour 
 
-{  buildManager buildManager;
+{
+    public TowerBlueprint sintTower;
+    public TowerBlueprint level1tower;
+    public TowerBlueprint level2tower;
+    public TowerBlueprint level3tower;
+    public TowerBlueprint level4tower;
+    buildManager buildManager;
    void Start()
    {
       buildManager = buildManager.instance;
