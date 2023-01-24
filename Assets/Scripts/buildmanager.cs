@@ -8,7 +8,11 @@ public class buildmanager : MonoBehaviour
     {
         if (instance != null)
         {
+<<<<<<< Updated upstream
             Debug.LogError("more than one builmaneger");
+=======
+            Debug.LogError("more than one buildmanager");
+>>>>>>> Stashed changes
             return;
         }
     instance = this;
