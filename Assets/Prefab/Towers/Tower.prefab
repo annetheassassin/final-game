@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 7088813058210640459}
   - component: {fileID: 7088813058210640460}
   - component: {fileID: 8921446461438106801}
-  - component: {fileID: 613182868619352060}
+  - component: {fileID: 8348225902817909222}
   m_Layer: 0
   m_Name: Tower
   m_TagString: Turret
@@ -103,7 +103,7 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 2.5
---- !u!114 &613182868619352060
+--- !u!114 &8348225902817909222
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -116,7 +116,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ProjectilesPrefab: {fileID: 8088439795632137864, guid: 200b4dce6af6ad647b8302bf3a7a34c3, type: 3}
-  projectileSpeed: 3
+  projectileSpeed: 0.3
 --- !u!1 &7088813059421654300
 GameObject:
   m_ObjectHideFlags: 0

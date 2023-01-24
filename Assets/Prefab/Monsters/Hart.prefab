@@ -748,6 +748,7 @@ GameObject:
   - component: {fileID: 508894088221357445}
   - component: {fileID: -8405056429930475478}
   - component: {fileID: -7930914900437482191}
+  - component: {fileID: 6462214924359518529}
   m_Layer: 0
   m_Name: Hart
   m_TagString: Monster
@@ -907,3 +908,16 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!114 &6462214924359518529
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9060865380614691380}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c60983b089e2b30459f102b1bbed0819, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 2
