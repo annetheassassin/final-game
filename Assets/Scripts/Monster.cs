@@ -4,27 +4,55 @@ using UnityEngine;
 
 public class Monster : MonoBehaviour
 {
+    [SerializeField]
+    public float MaxHealth;
 
-    static Vector2 tempPos;
-    static bool isActive;
+    private float health;
 
-    // Start is called before the first frame update
-    void FixedUpdate()
+    public HealthBar HealthBar;
+
+    public static string TAG
     {
-        tempPos = transform.position;
-
-        if (Input.GetKey(KeyCode.W)) { tempPos.y += 0.05f; }
-        if (Input.GetKey(KeyCode.S)) { tempPos.y -= 0.05f; }
-        if (Input.GetKey(KeyCode.D)) { tempPos.x += 0.05f; }
-        if (Input.GetKey(KeyCode.A)) { tempPos.x -= 0.05f; }
-
-
-        transform.position = tempPos;
+        get;
+        internal set;
     }
 
-    public static Vector2 GivePosMonster()
+    static Vector2 tempPos;
+
+    // Start is called before the first frame update
+    void Start()
     {
-        Vector2 MonsterPos = tempPos;
-        return MonsterPos;
+        health = MaxHealth;
+        HealthBar.SetHealth(health, MaxHealth);
+    }
+
+    void FixedUpdate()
+    {
+        //tempPos = transform.position;
+
+        //if (Input.GetKey(KeyCode.W)) { tempPos.y += 0.05f; }
+        //if (Input.GetKey(KeyCode.S)) { tempPos.y -= 0.05f; }
+        //if (Input.GetKey(KeyCode.D)) { tempPos.x += 0.05f; }
+        //if (Input.GetKey(KeyCode.A)) { tempPos.x -= 0.05f; }
+
+
+        //transform.position = tempPos;
+    }
+
+    public void OnTriggerEnter2D(Collider2D other)
+    {
+        if (other.tag == "Projectile")
+        {
+            Debug.Log(health);
+            Projectile projectile = other.GetComponent<Projectile>();
+            health -= projectile.damage;
+            HealthBar.SetHealth(health, MaxHealth);
+            Debug.Log(health);
+            Destroy(other.gameObject);
+            if (health <= 0)
+            {
+                Destroy(gameObject);
+            }
+        }
     }
 }
