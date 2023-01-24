@@ -30190,6 +30190,11 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1 &1033255452 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7088813058210640461, guid: 7cab6776d6a2fb141a1d573fccefbc7d, type: 3}
+  m_PrefabInstance: {fileID: 229313165}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1033718175
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -38495,7 +38500,7 @@ MonoBehaviour:
   Level4piet: {fileID: 2036405411}
   Level1piet: {fileID: 2040860487}
   Level2piet: {fileID: 1243465907}
-  Level3piet: {fileID: 1243465907}
+  Level3piet: {fileID: 1033255452}
 --- !u!114 &1314887189
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -44290,9 +44295,25 @@ PrefabInstance:
       propertyPath: m_Color.g
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 7088813058210640460, guid: 7cab6776d6a2fb141a1d573fccefbc7d, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7088813058210640461, guid: 7cab6776d6a2fb141a1d573fccefbc7d, type: 3}
       propertyPath: m_Name
       value: sintprefab
+      objectReference: {fileID: 0}
+    - target: {fileID: 7088813058210640461, guid: 7cab6776d6a2fb141a1d573fccefbc7d, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7088813059421654299, guid: 7cab6776d6a2fb141a1d573fccefbc7d, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -0.04
+      objectReference: {fileID: 0}
+    - target: {fileID: 7088813059421654299, guid: 7cab6776d6a2fb141a1d573fccefbc7d, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.02
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7cab6776d6a2fb141a1d573fccefbc7d, type: 3}
