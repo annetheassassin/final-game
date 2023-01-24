@@ -15,6 +15,9 @@ GameObject:
   - component: {fileID: 3672586627061729253}
   - component: {fileID: 8337855472180780980}
   - component: {fileID: 6762770175608540687}
+<<<<<<< HEAD
+>>>>>>> parent of 8d3ec21 (place)
+=======
 >>>>>>> parent of 8d3ec21 (place)
   m_Layer: 0
   m_Name: grass (144)
@@ -30050,4 +30053,7 @@ SpriteRenderer:
   m_Script: {fileID: 11500000, guid: 096d9474fdbeee24d895d99b74e00c15, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+<<<<<<< HEAD
+>>>>>>> parent of 8d3ec21 (place)
+=======
 >>>>>>> parent of 8d3ec21 (place)
