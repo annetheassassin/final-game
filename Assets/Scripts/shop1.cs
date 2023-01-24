@@ -3,35 +3,35 @@ using UnityEngine;
 
 public class shop1 : MonoBehaviour 
 
-{  buildManager buildManager;
+{  buildmanager buildmanager;
    void Start()
    {
-      buildManager = buildManager.instance;
+      buildmanager = buildmanager.instance;
 
    }
     public void PurchasesintTurret ()
     {
         Debug.Log("sint bought");
-      buildManager.SetTowerToBuild(buildManager.sintprefab);
+      buildmanager.SetTurrentToBuild(buildmanager.sintprefab);
     }
    public void purchaseLevel1piet()
     {
         Debug.Log("pietlevel1 bought");
-      buildManager.SetTowerToBuild(buildManager.Level1piet);
+      buildmanager.SetTurrentToBuild(buildmanager.Level1piet);
     }
     public void purchaseLevel2piet()
     {
         Debug.Log("pietlevel2 bought");
-       buildManager.SetTowerToBuild(buildManager.Level2piet);
+       buildmanager.SetTurrentToBuild(buildmanager.Level2piet);
     }
     public void purchaseLevel3piet()
     {
         Debug.Log("pietlevel3 bought");
-       buildManager.SetTowerToBuild(buildManager.Level3piet);
+       buildmanager.SetTurrentToBuild(buildmanager.Level3piet);
     }
     public void purchaseLevel4piet()
     {
         Debug.Log("pietlevel4 bought");
-       buildManager.SetTowerToBuild(buildManager.Level4piet);
+       buildmanager.SetTurrentToBuild(buildmanager.Level4piet);
     }
 }
