@@ -8,8 +8,14 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
+<<<<<<< HEAD
   - component: {fileID: 3878726349453351700}
   - component: {fileID: 3878726349453351701}
+=======
+  - component: {fileID: 3672586627061729253}
+  - component: {fileID: 8337855472180780980}
+  - component: {fileID: 6762770175608540687}
+>>>>>>> parent of 8d3ec21 (place)
   m_Layer: 0
   m_Name: grass (144)
   m_TagString: Untagged
@@ -90,6 +96,7 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
+<<<<<<< HEAD
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3878726349461533751}
@@ -30036,3 +30043,11 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+=======
+  m_GameObject: {fileID: 8500759847332952451}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 096d9474fdbeee24d895d99b74e00c15, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+>>>>>>> parent of 8d3ec21 (place)
