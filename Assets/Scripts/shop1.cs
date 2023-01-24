@@ -15,29 +15,29 @@ public class shop1 : MonoBehaviour
       buildManager = buildManager.instance;
 
    }
-    public void PurchasesintTurret ()
+    public void selectsintTurret ()
     {
-        Debug.Log("sint bought");
-      buildManager.SetTowerToBuild(buildManager.sintprefab);
+        Debug.Log("sint select");
+      buildManager.SelectTowerToBuild(sintTower);
     }
-   public void purchaseLevel1piet()
+   public void selectLevel1piet()
     {
-        Debug.Log("pietlevel1 bought");
-      buildManager.SetTowerToBuild(buildManager.Level1piet);
+        Debug.Log("pietlevel1 select");
+      buildManager.SelectTowerToBuild(level1tower);
     }
-    public void purchaseLevel2piet()
+    public void selectLevel2piet()
     {
-        Debug.Log("pietlevel2 bought");
-       buildManager.SetTowerToBuild(buildManager.Level2piet);
+        Debug.Log("pietlevel2  select");
+       buildManager.SelectTowerToBuild(level2tower);
     }
-    public void purchaseLevel3piet()
+    public void selectLevel3piet()
     {
-        Debug.Log("pietlevel3 bought");
-       buildManager.SetTowerToBuild(buildManager.Level3piet);
+        Debug.Log("pietlevel3 select");
+       buildManager.SelectTowerToBuild(level3tower);
     }
-    public void purchaseLevel4piet()
+    public void selectLevel4piet()
     {
-        Debug.Log("pietlevel4 bought");
-       buildManager.SetTowerToBuild(buildManager.Level4piet);
+        Debug.Log("pietlevel4 select");
+       buildManager.SelectTowerToBuild(level4tower);
     }
 }

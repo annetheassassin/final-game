@@ -4,36 +4,42 @@ using UnityEngine;
 public class buildManager : MonoBehaviour
 {
     public static buildManager instance;
-    void Awake ()
+     public GameObject sintprefab;
+    public GameObject Level4piet;
+    public GameObject Level1piet;
+    public GameObject Level2piet;
+    public GameObject Level3piet;
+
+    private TowerBlueprint TowerToBuild;
+    private tile selectedtile;
+    void Awake()
     {
         if (instance != null)
         {
             Debug.LogError("more than one buildmaneger");
             return;
         }
-    instance = this;
+        instance = this;
     }
 
-    private Node selectedNode;
-    public void SelectNode(Node node){
-        selectedNode = node;
-        TowerTobuild = null;
 
-    }
+    //public void Selecttile(tile tile)
+   // {
+    ///    selectedtile = tile;
+    //    TowerTobuild = null;
 
-    public GameObject sintprefab;
-    public GameObject Level4piet;
-    public GameObject Level1piet;
-    public GameObject Level2piet;
-    public GameObject Level3piet;
-    private GameObject TowerTobuild;
-    public GameObject GetTowerTobuild ()
+  //  }
+
+   
+
+    public bool CanBuild { get { return TowerToBuild != null; } }
+    public void BuildTowerOn(tile tile)
     {
-        return TowerTobuild;
+        GameObject turret = (GameObject)Instantiate(TowerToBuild.prefab, tile.GetBuildPosition(), Quaternion.identity);
+        tile.turret = turret;
     }
-    public void SetTowerToBuild(GameObject Tower)
+    public void SelectTowerToBuild(TowerBlueprint turret)
     {
-        TowerTobuild= Tower;
-        selectedNode= null;
+        TowerToBuild = turret;
     }
 }

@@ -5,6 +5,7 @@ using UnityEngine;
 public class tile : MonoBehaviour
 {
     private GameObject Tower;
+    public GameObject turret;
 
     buildManager buildManager;
     void Start()
@@ -13,10 +14,23 @@ public class tile : MonoBehaviour
        
    }
 
+  
+
+    void OnMouseEnter()
+    {
+        if (!buildManager.CanBuild)
+            return;
+    }
+    public Vector3 GetBuildPosition()
+    {
+        return transform.position + positionOffset;
+    }
+   
+
     void OnMouseDown()
     {
         Debug.Log("click");
-       if (buildManager.GetTowerTobuild() == null)
+       if (!buildManager.CanBuild)
            return;
 
        if (Tower != null)
@@ -24,8 +38,7 @@ public class tile : MonoBehaviour
             Debug.Log("cant place here");
            return;
        }
-        GameObject TowerToBuild = buildManager.GetTowerTobuild();
-        Tower = (GameObject)Instantiate(TowerToBuild, transform.position, transform.rotation);
+         buildManager.BuildTowerOn(this);
 
     }
 }
