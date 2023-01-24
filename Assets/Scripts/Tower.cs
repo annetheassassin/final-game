@@ -5,12 +5,20 @@ using UnityEngine;
 
 public class Tower : MonoBehaviour
 {
-    [SerializeField]
-    private string projectTileType;
+    public GameObject ProjectilesPrefab;
+
+    private GameObject projectile = null;
+
+    private int AttackCooldown = 0;
 
     private SpriteRenderer mySpriteRenderer;
 
-    private Monster target;
+    private Monster targetTower;
+
+    private Monster targetProjectile;
+
+    [SerializeField]
+    public float projectileSpeed;
 
     private List<Monster> monstersList = new List<Monster>();
 
@@ -21,14 +29,9 @@ public class Tower : MonoBehaviour
     }
 
     // Update is called once per frame
-    void FixedUpdate()    
+    void FixedUpdate()
     {
         Attack();
-        if(monstersList[0] != null)
-        {
-            Debug.Log(monstersList[0]);
-        }
-
     }
 
     //Select the tower and show radius
@@ -56,30 +59,60 @@ public class Tower : MonoBehaviour
             monstersList.Remove(other.GetComponent<Monster>());
             if (monstersList.Count == 0)
             {
-                target = null;
+                targetTower = null;
+                AttackCooldown = 0;
             }
         }
     }
 
     //Attack and face towards the monster
+
     public void Attack()
     {
         Vector2 MonsterPos;
         if (monstersList.Count > 0)
         {
-            target = monstersList[0];
+            targetTower = monstersList[0];
         }
-        if (target != null)
+        if (targetTower != null)
         {
-            MonsterPos = target.transform.position;
+            MonsterPos = targetTower.transform.position;
             FaceEnemy(MonsterPos);
-            ShootEnemy();
+            bool isCanAttack = CanAttack();
+            ShootEnemy(isCanAttack);
+        }
+        MoveToMonster();
+    }
+
+    public bool CanAttack()
+    {
+        if (AttackCooldown > 0)
+        {
+            AttackCooldown -= 1;
+            return false;
+        }
+        else
+        {
+            AttackCooldown = 60;
+            return true;
         }
     }
 
-    public void ShootEnemy()
+    public void ShootEnemy(bool isCanAttack)
     {
+        if (isCanAttack)
+        {
+            projectile = Instantiate(ProjectilesPrefab, transform.position, Quaternion.identity);
+            targetProjectile = targetTower;
+        }
+    }
 
+    public void MoveToMonster()
+    {
+        if (projectile != null)
+        {
+            projectile.transform.position = Vector2.MoveTowards(projectile.transform.position, targetProjectile.transform.position, projectileSpeed);
+        }
     }
 
     //Calculate the degrees the tower has to turn to face towwards the Monster
@@ -97,11 +130,10 @@ public class Tower : MonoBehaviour
         //radians
         radians = Math.Atan2(y, x);
         //angle
-        degrees = radians * (180/Math.PI);
+        degrees = radians * (180 / Math.PI);
 
         TowerRot = Quaternion.Euler(0, 0, (float)degrees);
 
         transform.rotation = TowerRot;
     }
-
 }

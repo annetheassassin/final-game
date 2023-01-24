@@ -2,36 +2,21 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace RehtseStudio.SimpleWaveSystem.SO
+public class Projectile : MonoBehaviour
 {
-
-    [System.Serializable]
-    public class WaveSetUp
+    public float damage;
+    void Start()
     {
-
-        public int objectID;
-        public GameObject gameObjectToSpawn;
-
+        //delete object after 5 seconds
+        Destroy(gameObject, 5.0f);
     }
 
-    [CreateAssetMenu(menuName = "Rehtse Studio Simple Wave System/Create New Wave")]
-    public class WaveSystemSO : ScriptableObject
-    {
-
-        [Header("Type of object on the wave")]
-        public WaveSetUp[] objectToSpawnOnThisWave;
-
-        [Header("Amount of objects to spawn on this wave")]
-        public int amountToSpawnOnThisWave;
-
-        public int ReturnObjectType()
-        {
-
-            var nextObjectType = objectToSpawnOnThisWave[UnityEngine.Random.Range(0, objectToSpawnOnThisWave.Length)].objectID;
-            return nextObjectType;
-
-        }
-
-    }
-
+    //Destroy projectile on enter collision
+    //public void OnTriggerEnter2D(Collider2D other)
+    //{
+    //if (other.tag == "Monster")
+    //{
+    //Destroy(gameObject);
+    //}
+    //}
 }
