@@ -6,20 +6,11 @@ public class tile : MonoBehaviour
 {
     private GameObject Tower;
 
-  //  public Color hovercolor;
-   // private Color startcolor;
-  //  private Renderer rend;
     buildManager buildManager;
     void Start()
    {
        buildManager = buildManager.instance;
-       // rend = GetComponent<Renderer>();
-       // startcolor = rend.Sprite.color;
-   }
-   void OnMouseEnter()
-   {
-      // rend.Sprite.color = hovercolor;
-
+       
    }
 
     void OnMouseDown()
@@ -37,8 +28,4 @@ public class tile : MonoBehaviour
         Tower = (GameObject)Instantiate(TowerToBuild, transform.position, transform.rotation);
 
     }
-    void OnMouseExit()
-   {
-     //  rend.Sprite.color = startcolor;
-   }
 }

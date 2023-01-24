@@ -14,6 +14,13 @@ public class buildManager : MonoBehaviour
     instance = this;
     }
 
+    private Node selectedNode;
+    public void SelectNode(Node node){
+        selectedNode = node;
+        TowerTobuild = null;
+
+    }
+
     public GameObject sintprefab;
     public GameObject Level4piet;
     public GameObject Level1piet;
@@ -27,5 +34,6 @@ public class buildManager : MonoBehaviour
     public void SetTowerToBuild(GameObject Tower)
     {
         TowerTobuild= Tower;
+        selectedNode= null;
     }
 }
