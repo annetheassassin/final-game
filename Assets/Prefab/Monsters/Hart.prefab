@@ -348,10 +348,10 @@ GameObject:
   - component: {fileID: 149944603870611867}
   - component: {fileID: -5732510794030790891}
   - component: {fileID: -7897337943595251992}
-  - component: {fileID: 508894088221357445}
   - component: {fileID: -3678659744251122025}
   - component: {fileID: -8405056429930475478}
   - component: {fileID: -7930914900437482191}
+  - component: {fileID: 231785385280983693}
   m_Layer: 0
   m_Name: Hart
   m_TagString: Monster
@@ -449,19 +449,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &508894088221357445
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 9060865380614691380}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f654ad3f9d7a4714fbb9b443abfc7c61, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  speed: 2
 --- !u!114 &-3678659744251122025
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -521,3 +508,16 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!114 &231785385280983693
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9060865380614691380}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c60983b089e2b30459f102b1bbed0819, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 1.5
