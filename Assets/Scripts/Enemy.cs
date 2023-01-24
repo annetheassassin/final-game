@@ -28,18 +28,14 @@ public class Enemy : MonoBehaviour
 
     void GetNextWaypoint() 
     {
-        if (wavepointIndex < Waypoints.points.Length - 1) 
-        {
-            wavepointIndex++;
-            target = Waypoints.points[wavepointIndex];
-            
-        }
-        else
+        if (wavepointIndex >= Waypoints.points.Length - 1) 
         {
             Destroy(gameObject);
             WaveSpawner.EnemiesAlive--;
         }
 
+        wavepointIndex++;
+        target = Waypoints.points[wavepointIndex];
     }
 
 }
