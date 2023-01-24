@@ -8,16 +8,9 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-<<<<<<< HEAD
   - component: {fileID: 3878726349453351700}
   - component: {fileID: 3878726349453351701}
   - component: {fileID: 4412250680286274799}
-=======
-  - component: {fileID: 3672586627061729253}
-  - component: {fileID: 8337855472180780980}
-  - component: {fileID: 6762770175608540687}
-  - component: {fileID: 5588429392715528030}
->>>>>>> parent of 750eb2e (Revert "place")
   m_Layer: 0
   m_Name: grass (144)
   m_TagString: Untagged
@@ -34645,16 +34638,3 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b7a4ccd87d22a284aaa99a947be1776d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!65 &5588429392715528030
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8500759847332952451}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 0.2}
-  m_Center: {x: 0, y: 0, z: 0}
