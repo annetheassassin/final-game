@@ -42,9 +42,10 @@ public class buildManager : MonoBehaviour
             Debug.Log("not enough money");
             return;
         }
-        PlayerStats.Money = PlayerStats.Money - TowerToBuild.cost;
+      
         GameObject turret = (GameObject)Instantiate(TowerToBuild.prefab, tile.GetBuildPosition(), Quaternion.identity);
         tile.currentturret = turret;
+        PlayerStats.Money -=  TowerToBuild.cost;
         Debug.Log("Tower build money left" + PlayerStats.Money);
     }
     public void SelectTowerToBuild(TowerBlueprint turret)
