@@ -20,6 +20,7 @@ public class buildManager : MonoBehaviour
     public GameObject Level2piet;
     public GameObject Level3piet;
 
+    public NodeUI nodeUI;
     private TowerBlueprint TowerToBuild;
     //private tile selectedtile;
    
@@ -51,5 +52,15 @@ public class buildManager : MonoBehaviour
     public void SelectTowerToBuild(TowerBlueprint turret)
     {
         TowerToBuild = turret;
+        SelectTile = null;
+
+        nodeUI.Hide;
+
+    }
+
+    public void SelectTile (tile tile){
+        SelectTile = tile;
+        TowerToBuild = null;
+        nodeUI.setTarget(tile);
     }
 }
