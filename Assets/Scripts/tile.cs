@@ -1,44 +1,48 @@
 using System.Collections;
 
 using UnityEngine;
+using UnityEngine.UIElements;
 
 public class tile : MonoBehaviour
 {
     private GameObject Tower;
+    public GameObject currentturret;
+    public Vector3 positionOffset;
+   
 
-  //  public Color hovercolor;
-   // private Color startcolor;
-  //  private Renderer rend;
     buildManager buildManager;
     void Start()
    {
        buildManager = buildManager.instance;
-       // rend = GetComponent<Renderer>();
-       // startcolor = rend.Sprite.color;
+       
    }
-   void OnMouseEnter()
-   {
-      // rend.Sprite.color = hovercolor;
 
-   }
+  
+
+    void OnMouseEnter()
+    {
+        if (!buildManager.CanBuild)
+            return;
+    }
+    public Vector3 GetBuildPosition()
+    {
+        return transform.position + positionOffset;
+    }
+   
 
     void OnMouseDown()
     {
         Debug.Log("click");
-       if (buildManager.GetTowerTobuild() == null)
+       if (!buildManager.CanBuild)
            return;
+        buildManager.BuildTowerOn(this);
 
        if (Tower != null)
        {
             Debug.Log("cant place here");
            return;
        }
-        GameObject TowerToBuild = buildManager.GetTowerTobuild();
-        Tower = (GameObject)Instantiate(TowerToBuild, transform.position, transform.rotation);
+         
 
     }
-    void OnMouseExit()
-   {
-     //  rend.Sprite.color = startcolor;
-   }
 }
