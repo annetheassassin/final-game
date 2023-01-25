@@ -50,9 +50,5 @@ public class buildManager : MonoBehaviour
 
     }
 
-    public void SelectTile (tile tile){
-        SelectTile = tile;
-        TowerToBuild = null;
-        nodeUI.SetTarget(tile);
-    }
+   
 }

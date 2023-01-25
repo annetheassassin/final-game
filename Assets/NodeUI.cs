@@ -18,4 +18,16 @@ public class NodeUI : MonoBehaviour
 
         ui.SetActive(false);
     }
+
+    public void SellTurret(){
+        PlayerStats.Money += TowerBlueprint.GetSellAmount;
+
+        TowerBlueprint = null;
+    }
+
+    public void Sell(){
+        target.SellTurrert();
+            buildManager.instance.DeselectTile();
+        
+    }
 }
