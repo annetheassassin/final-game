@@ -39314,13 +39314,13 @@ MonoBehaviour:
     cost: 100
   level2tower:
     prefab: {fileID: 1570202779}
-    cost: 0
+    cost: 50
   level3tower:
     prefab: {fileID: 25333510}
-    cost: 0
+    cost: 200
   level4tower:
     prefab: {fileID: 2123422137}
-    cost: 0
+    cost: 100
 --- !u!114 &1323696419
 MonoBehaviour:
   m_ObjectHideFlags: 0
