@@ -22,15 +22,7 @@ public class buildManager : MonoBehaviour
 
     public NodeUI nodeUI;
     private TowerBlueprint TowerToBuild;
-    //private tile selectedtile;
-   
-
-    //public void Selecttile(tile tile)
-   // {
-    ///    selectedtile = tile;
-    //    TowerTobuild = null;
-
-  //  }
+    
 
    
 
@@ -61,6 +53,6 @@ public class buildManager : MonoBehaviour
     public void SelectTile (tile tile){
         SelectTile = tile;
         TowerToBuild = null;
-        nodeUI.setTarget(tile);
+        nodeUI.SetTarget(tile);
     }
 }

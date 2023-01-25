@@ -6,11 +6,11 @@ public class NodeUI : MonoBehaviour
 {
     public GameObject ui;
 
-    private Node target;
+    private tile target;
 
     public void SetTarget(tile _target){
             target = _target;
-            transform.postition = target.GetBuildPosition();
+            transform.position = target.GetBuildPosition();
             ui.SetActive(true);
     }
 
