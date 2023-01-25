@@ -38850,8 +38850,8 @@ MonoBehaviour:
   sintprefab: {fileID: 2123422137}
   Level4piet: {fileID: 1570202779}
   Level1piet: {fileID: 2125408097}
-  Level2piet: {fileID: 2123422137}
-  Level3piet: {fileID: 25333510}
+  Level2piet: {fileID: 25333510}
+  Level3piet: {fileID: 2123422137}
 --- !u!114 &1314887189
 MonoBehaviour:
   m_ObjectHideFlags: 0
