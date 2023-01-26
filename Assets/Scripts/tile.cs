@@ -5,15 +5,15 @@ using UnityEngine.UIElements;
 
 public class tile : MonoBehaviour
 {
-    private GameObject Tower;
+    private GameObject turret;
     public GameObject currentturret;
     public Vector3 positionOffset;
    
-   public void SelectTile (tile tile){
-        SelectTile = tile;
-        TowerToBuild = null;
-        nodeUI.SetTarget(tile);
-    }
+  // public void SelectTile (tile tile){
+  //      SelectTile = tile;
+   //     TowerToBuild = null;
+   //     nodeUI.SetTarget(tile);
+   // }
 
     buildManager buildManager;
     void Start()
@@ -38,16 +38,18 @@ public class tile : MonoBehaviour
     void OnMouseDown()
     {
         Debug.Log("click");
-       if (!buildManager.CanBuild)
-           return;
-        buildManager.BuildTowerOn(this);
+     
 
-       if (Tower != null)
+       if (turret != null)
        {
-            Debug.Log("cant place here");
+            Debug.Log("dubbel");
+       buildManager.selecttile(this);
            return;
        }
-         
-
+           
+    if (!buildManager.CanBuild)
+           return;
+        buildManager.BuildTowerOn(this); 
+        
     }
 }

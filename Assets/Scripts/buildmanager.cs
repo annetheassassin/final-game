@@ -20,10 +20,10 @@ public class buildManager : MonoBehaviour
     public GameObject Level2piet;
     public GameObject Level3piet;
 
-    public NodeUI nodeUI;
     private TowerBlueprint TowerToBuild;
-    
-
+   
+    public NodeUI nodeUI;
+    private tile selectedtile;
    
 
     public bool CanBuild { get { return TowerToBuild != null; } }
@@ -41,13 +41,16 @@ public class buildManager : MonoBehaviour
         PlayerStats.Money -=  TowerToBuild.cost;
         Debug.Log("Tower build money left" + PlayerStats.Money);
     }
+    public void selecttile(tile tile)
+    {
+        selectedtile = tile;
+        TowerToBuild = null;
+        nodeUI.SetTarget(tile);
+    }
     public void SelectTowerToBuild(TowerBlueprint turret)
     {
         TowerToBuild = turret;
-        SelectTile = null;
-
-        nodeUI.Hide;
-
+        selectedtile = null;
     }
 
    
