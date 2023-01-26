@@ -38742,6 +38742,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 096d9474fdbeee24d895d99b74e00c15, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  currentturret: {fileID: 0}
+  positionOffset: {x: 0, y: 0, z: 0}
 --- !u!114 &1314887190
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -38758,25 +38760,9 @@ MonoBehaviour:
   - spawnRate: 1
     enemies:
     - enemy: {fileID: 9060865380614691380, guid: d8092fb3fb812464db932de098cd14a4, type: 3}
-      count: 5
-    - enemy: {fileID: 9060865380614691380, guid: 473f60b0f1b0199448215d360cd864f3, type: 3}
-      count: 2
-    - enemy: {fileID: 9060865380614691380, guid: d8092fb3fb812464db932de098cd14a4, type: 3}
-      count: 5
-    - enemy: {fileID: 2167003755322765204, guid: 95e95e77aa1ff3c4a8ac11a0dddae206, type: 3}
-      count: 2
-  - spawnRate: 0
-    enemies:
-    - enemy: {fileID: 9060865380614691380, guid: d8092fb3fb812464db932de098cd14a4, type: 3}
-      count: 10
-    - enemy: {fileID: 9060865380614691380, guid: 473f60b0f1b0199448215d360cd864f3, type: 3}
-      count: 5
-    - enemy: {fileID: 9060865380614691380, guid: d8092fb3fb812464db932de098cd14a4, type: 3}
-      count: 5
-    - enemy: {fileID: 8650007565475308253, guid: 6d4e21ad7295a70468e5bfe2ddf0f8dc, type: 3}
-      count: 3
+      count: 1
   spawnPoint: {fileID: 983538507}
-  timeBetweenWaves: 30
+  timeBetweenWaves: 0
   EnemiesAliveText: {fileID: 0}
   waveCountDownText: {fileID: 0}
   nrofEnemies: 0
@@ -39220,6 +39206,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fec354e5d5cedc041b4b15bc3f4cde4b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  sintTower:
+    prefab: {fileID: 0}
+    cost: 0
+  level1tower:
+    prefab: {fileID: 0}
+    cost: 0
+  level2tower:
+    prefab: {fileID: 0}
+    cost: 0
+  level3tower:
+    prefab: {fileID: 0}
+    cost: 0
+  level4tower:
+    prefab: {fileID: 0}
+    cost: 0
 --- !u!114 &1323696419
 MonoBehaviour:
   m_ObjectHideFlags: 0
