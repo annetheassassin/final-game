@@ -20,16 +20,9 @@ public class buildManager : MonoBehaviour
     public GameObject Level3piet;
     public GameObject Level4piet;
 
+    public NodeUI nodeUI;
     private TowerBlueprint TowerToBuild;
-    //private tile selectedtile;
-   
-
-    //public void Selecttile(tile tile)
-   // {
-    ///    selectedtile = tile;
-    //    TowerTobuild = null;
-
-  //  }
+    
 
    
 
@@ -42,13 +35,20 @@ public class buildManager : MonoBehaviour
             Debug.Log("not enough money");
             return;
         }
-        PlayerStats.Money = PlayerStats.Money - TowerToBuild.cost;
+      
         GameObject turret = (GameObject)Instantiate(TowerToBuild.prefab, tile.GetBuildPosition(), Quaternion.identity);
         tile.currentturret = turret;
+        PlayerStats.Money -=  TowerToBuild.cost;
         Debug.Log("Tower build money left" + PlayerStats.Money);
     }
     public void SelectTowerToBuild(TowerBlueprint turret)
     {
         TowerToBuild = turret;
+        SelectTile = null;
+
+        nodeUI.Hide;
+
     }
+
+   
 }

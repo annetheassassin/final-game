@@ -9,6 +9,11 @@ public class tile : MonoBehaviour
     public GameObject currentturret;
     public Vector3 positionOffset;
    
+   public void SelectTile (tile tile){
+        SelectTile = tile;
+        TowerToBuild = null;
+        nodeUI.SetTarget(tile);
+    }
 
     buildManager buildManager;
     void Start()
