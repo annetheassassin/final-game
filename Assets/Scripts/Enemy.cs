@@ -37,7 +37,7 @@ public class Enemy : MonoBehaviour
         else
         {
             Destroy(gameObject);
-            WaveSpawner.EnemiesAlive--;
+            WaveSpawner.nrofEnemies--;
         }
 
     }

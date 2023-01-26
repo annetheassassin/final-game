@@ -4,72 +4,53 @@ using UnityEngine.UI;
 
 public class WaveSpawner : MonoBehaviour
 {
-
-    public static int EnemiesAlive = 0;
-
     public Wave[] waves;
 
     public Transform spawnPoint;
 
     public float timeBetweenWaves = 0f;
-    private float countdown = 5f;
-
+    public static float countdown = 15f;
+    
     public Text EnemiesAliveText;
     public Text waveCountDownText;
-    public float nrofEnemies = 0;
+    public static int nrofEnemies = 0;
 
     private int waveIndex = 0;
 
-    void Update()
+    void Update () 
     {
-        
-        if (EnemiesAlive > 0)
-        {
-            return;
-        }
-
-        if (countdown <= 0f)
+        if (countdown < 0f)
         {
             StartCoroutine(SpawnWave());
             countdown = timeBetweenWaves;
             return;
         }
-        else
-        {
-            countdown--;
-        }
 
-        //waveCountDownText.text = Mathf.Ceil(countdown).ToString();
-        //countdown -= Time.deltaTime;
+        waveCountDownText.text = Mathf.Ceil(countdown).ToString();
+        countdown -= Time.deltaTime;
 
+        EnemiesAliveText.text = Mathf.Ceil(nrofEnemies).ToString();
 
-        //EnemiesAliveText.text = Mathf.Ceil(nrofEnemies).ToString();
 
     }
-
-    void CountnrofEnemies()
-    {
-        Wave wave = waves[0];
-        for (int z = 0; z < wave.enemies.Length; z++)
-        {
-            for (int i = 0; i < wave.enemies[z].count; i++)
-            {
-                nrofEnemies = nrofEnemies + wave.enemies[z].count;
-            }
-        }
-    }
-
 
     IEnumerator SpawnWave()
     {
         Wave wave = waves[waveIndex];
         for (int z = 0; z < wave.enemies.Length; z++)
         {
+            //update enemies alive
+            nrofEnemies = nrofEnemies + wave.enemies[z].count;
+            Debug.Log("nr of enemies" + nrofEnemies);
+            EnemiesAliveText.text = Mathf.Ceil(nrofEnemies).ToString();
+
             for (int i = 0; i < wave.enemies[z].count; i++)
             {
                 SpawnEnemy(wave.enemies[z].enemy);
+                
                 yield return new WaitForSeconds(1f / wave.spawnRate);
             }
+            
             if (waveIndex == waves.Length)
             {
                 Debug.Log("TODO - End Level");
@@ -81,8 +62,6 @@ public class WaveSpawner : MonoBehaviour
 
     void SpawnEnemy(GameObject enemy)
     {
-        Debug.Log("spawned");
         Instantiate(enemy, spawnPoint.position, spawnPoint.rotation);
-        EnemiesAlive++;
     }
 }
