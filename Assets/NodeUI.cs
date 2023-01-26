@@ -9,25 +9,25 @@ public class NodeUI : MonoBehaviour
     private tile target;
 
     public void SetTarget(tile _target){
-            target = _target;
+       target = _target;
             transform.position = target.GetBuildPosition();
-            ui.SetActive(true);
+          //  ui.SetActive(true);
     }
 
-    public void Hide(){
+   // public void Hide(){
 
-        ui.SetActive(false);
-    }
+   //     ui.SetActive(false);
+  //  }
 
-    public void SellTurret(){
-        PlayerStats.Money += TowerBlueprint.GetSellAmount;
+   // public void SellTurret(){
+   //     PlayerStats.Money += TowerBlueprint.GetSellAmount;
 
-        TowerBlueprint = null;
-    }
+    //    TowerBlueprint = null;
+    //}
 
-    public void Sell(){
-        target.SellTurrert();
-            buildManager.instance.DeselectTile();
+  //  public void Sell(){
+    //    target.SellTurrert();
+    //        buildManager.instance.DeselectTile();
         
-    }
+    //}
 }
