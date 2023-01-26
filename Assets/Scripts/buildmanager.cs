@@ -15,10 +15,10 @@ public class buildManager : MonoBehaviour
     }
 
      public GameObject sintprefab;
-    public GameObject Level4piet;
     public GameObject Level1piet;
     public GameObject Level2piet;
     public GameObject Level3piet;
+    public GameObject Level4piet;
 
     private TowerBlueprint TowerToBuild;
    

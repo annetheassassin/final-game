@@ -11,50 +11,78 @@ public class WaveSpawner : MonoBehaviour
 
     public Transform spawnPoint;
 
-    public float timeBetweenWaves = 5f;
-    private float countdown = 2f;
+    public float timeBetweenWaves = 0f;
+    private float countdown = 5f;
 
+    public Text EnemiesAliveText;
     public Text waveCountDownText;
+    public float nrofEnemies = 0;
 
     private int waveIndex = 0;
 
-    void Update () 
+    void Update()
     {
+        
         if (EnemiesAlive > 0)
         {
-            return; 
+            return;
         }
-        
+
         if (countdown <= 0f)
         {
             StartCoroutine(SpawnWave());
             countdown = timeBetweenWaves;
             return;
         }
-
-        countdown -= Time.deltaTime;
-
-        waveCountDownText.text = Mathf.Floor(countdown).ToString();
-    }
-
-    IEnumerator SpawnWave ()
-    {
-
-        Wave wave = waves[waveIndex];
-
-        for (int i = 0; i < wave.count; i++)
+        else
         {
-            SpawnEnemy(wave.enemy); 
-            yield return new WaitForSeconds(1f / wave.rate);
+            countdown--;
         }
 
+        //waveCountDownText.text = Mathf.Ceil(countdown).ToString();
+        //countdown -= Time.deltaTime;
+
+
+        //EnemiesAliveText.text = Mathf.Ceil(nrofEnemies).ToString();
+
+    }
+
+    void CountnrofEnemies()
+    {
+        Wave wave = waves[0];
+        for (int z = 0; z < wave.enemies.Length; z++)
+        {
+            for (int i = 0; i < wave.enemies[z].count; i++)
+            {
+                nrofEnemies = nrofEnemies + wave.enemies[z].count;
+            }
+        }
+    }
+
+
+    IEnumerator SpawnWave()
+    {
+        Wave wave = waves[waveIndex];
+        for (int z = 0; z < wave.enemies.Length; z++)
+        {
+            for (int i = 0; i < wave.enemies[z].count; i++)
+            {
+                SpawnEnemy(wave.enemies[z].enemy);
+                yield return new WaitForSeconds(1f / wave.spawnRate);
+            }
+            if (waveIndex == waves.Length)
+            {
+                Debug.Log("TODO - End Level");
+                this.enabled = false;
+            }
+        }
         waveIndex++;
     }
 
     void SpawnEnemy(GameObject enemy)
     {
+        Debug.Log("spawned");
         Instantiate(enemy, spawnPoint.position, spawnPoint.rotation);
         EnemiesAlive++;
     }
-
 }

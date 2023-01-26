@@ -9,6 +9,8 @@ public class Monster : MonoBehaviour
 
     private float health;
 
+    public int CoinsOnDeath;
+
     public HealthBar HealthBar;
 
     public static string TAG
