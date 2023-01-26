@@ -4,13 +4,13 @@ using UnityEngine;
 
 public class Enemy : MonoBehaviour
 {
-
+    
     public float speed = 10f;
 
     private Transform target;
     private int wavepointIndex = 0;
 
-    void Start()
+    void Start() 
     {
         target = Waypoints.points[0];
     }
@@ -20,26 +20,22 @@ public class Enemy : MonoBehaviour
         Vector3 dir = target.position - transform.position;
         transform.Translate(dir.normalized * speed * Time.deltaTime, Space.World);
 
-        if (Vector3.Distance(transform.position, target.position) <= 0.4f)
+        if (Vector3.Distance(transform.position, target.position) <= 0.4f) 
         {
-            GetNextWaypoint();
+            GetNextWaypoint();  
         }
     }
 
-    void GetNextWaypoint()
+    void GetNextWaypoint() 
     {
-        if (wavepointIndex < Waypoints.points.Length - 1)
-        {
-            wavepointIndex++;
-            target = Waypoints.points[wavepointIndex];
-
-        }
-        else
+        if (wavepointIndex >= Waypoints.points.Length - 1) 
         {
             Destroy(gameObject);
             WaveSpawner.EnemiesAlive--;
         }
 
+        wavepointIndex++;
+        target = Waypoints.points[wavepointIndex];
     }
 
 }

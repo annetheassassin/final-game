@@ -9,13 +9,7 @@ public class Tower : MonoBehaviour
 
     private GameObject projectile = null;
 
-    public int cooldownFrames;
-
     private int AttackCooldown = 0;
-
-    public int Damage;
-
-    public int Cost;
 
     private SpriteRenderer mySpriteRenderer;
 
@@ -99,7 +93,7 @@ public class Tower : MonoBehaviour
         }
         else
         {
-            AttackCooldown = cooldownFrames;
+            AttackCooldown = 60;
             return true;
         }
     }
@@ -115,13 +109,9 @@ public class Tower : MonoBehaviour
 
     public void MoveToMonster()
     {
-        if (projectile != null && targetProjectile != null)
+        if (projectile != null)
         {
             projectile.transform.position = Vector2.MoveTowards(projectile.transform.position, targetProjectile.transform.position, projectileSpeed);
-        }
-        else
-        {
-            Destroy(projectile);
         }
     }
 
