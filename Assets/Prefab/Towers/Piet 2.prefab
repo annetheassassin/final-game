@@ -77,7 +77,7 @@ SpriteRenderer:
   m_SortingLayer: 2
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: f5d84f98e2152374695aeb6cb4a7cfdf, type: 3}
-  m_Color: {r: 1, g: 0, b: 0, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -115,8 +115,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 790a6c8fd00cf6040af3f2cfe5f5b9c0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ProjectilesPrefab: {fileID: 8088439795632137864, guid: 200b4dce6af6ad647b8302bf3a7a34c3, type: 3}
+  ProjectilesPrefab: {fileID: 8088439795632137864, guid: 6ef1fbae14855b948b7bcf6e7b6bf9a6, type: 3}
   cooldownFrames: 60
+  Damage: 30
+  Cost: 100
   projectileSpeed: 0.3
 --- !u!1 &7088813059421654300
 GameObject:

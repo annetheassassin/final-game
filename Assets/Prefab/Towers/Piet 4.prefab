@@ -80,8 +80,20 @@ PrefabInstance:
       value: Piet 4
       objectReference: {fileID: 0}
     - target: {fileID: 8348225902817909222, guid: 7cab6776d6a2fb141a1d573fccefbc7d, type: 3}
-      propertyPath: cooldownFrames
-      value: 60
+      propertyPath: Cost
+      value: 300
       objectReference: {fileID: 0}
+    - target: {fileID: 8348225902817909222, guid: 7cab6776d6a2fb141a1d573fccefbc7d, type: 3}
+      propertyPath: Damage
+      value: 40
+      objectReference: {fileID: 0}
+    - target: {fileID: 8348225902817909222, guid: 7cab6776d6a2fb141a1d573fccefbc7d, type: 3}
+      propertyPath: cooldownFrames
+      value: 30
+      objectReference: {fileID: 0}
+    - target: {fileID: 8348225902817909222, guid: 7cab6776d6a2fb141a1d573fccefbc7d, type: 3}
+      propertyPath: ProjectilesPrefab
+      value: 
+      objectReference: {fileID: 8088439795632137864, guid: 92852e7a2fe7a2948a5fc7b784984903, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7cab6776d6a2fb141a1d573fccefbc7d, type: 3}

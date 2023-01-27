@@ -115,8 +115,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 790a6c8fd00cf6040af3f2cfe5f5b9c0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ProjectilesPrefab: {fileID: 8088439795632137864, guid: 200b4dce6af6ad647b8302bf3a7a34c3, type: 3}
+  ProjectilesPrefab: {fileID: 8088439795632137864, guid: e4f3d2154d60dea4f8d208559c456639, type: 3}
   cooldownFrames: 30
+  Damage: 80
+  Cost: 400
   projectileSpeed: 0.3
 --- !u!1 &98655179470234030
 GameObject:

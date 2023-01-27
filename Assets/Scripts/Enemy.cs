@@ -6,9 +6,14 @@ public class Enemy : MonoBehaviour
 {
 
     public float speed = 10f;
+    public int Damage;
+
+    private buildManager buildManager;
 
     private Transform target;
     private int wavepointIndex = 0;
+
+    //private buildManager BuildManager;
 
     void Start()
     {
@@ -38,8 +43,13 @@ public class Enemy : MonoBehaviour
         {
             Destroy(gameObject);
             WaveSpawner.nrofEnemies--;
+            PlayerStats.Health -= Damage;
+            if(PlayerStats.Health <= 0)
+            {
+                GameOverMenu.Pause();
+            }
+            PlayerStats.HealthBar.SetHealth(PlayerStats.Health, PlayerStats.healthMax);
+            Debug.Log(PlayerStats.Health);
         }
-
     }
-
 }

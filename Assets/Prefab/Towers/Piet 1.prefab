@@ -77,7 +77,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7088813058210640461, guid: 7cab6776d6a2fb141a1d573fccefbc7d, type: 3}
       propertyPath: m_Name
-      value: Tower (2)
+      value: Piet 1
       objectReference: {fileID: 0}
+    - target: {fileID: 8348225902817909222, guid: 7cab6776d6a2fb141a1d573fccefbc7d, type: 3}
+      propertyPath: Cost
+      value: 80
+      objectReference: {fileID: 0}
+    - target: {fileID: 8348225902817909222, guid: 7cab6776d6a2fb141a1d573fccefbc7d, type: 3}
+      propertyPath: Damage
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 8348225902817909222, guid: 7cab6776d6a2fb141a1d573fccefbc7d, type: 3}
+      propertyPath: ProjectilesPrefab
+      value: 
+      objectReference: {fileID: 8088439795632137864, guid: bae4a6df11f9c3b4dbbba30480b8e472, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7cab6776d6a2fb141a1d573fccefbc7d, type: 3}

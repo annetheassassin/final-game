@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Projectile : MonoBehaviour
 {
-    public float damage;
+    public Tower Tower;
     void Start()
     {
         //delete object after 5 seconds

@@ -7,6 +7,7 @@ TagManager:
   - Waypoints
   - Monster
   - Turret
+  - Projectile
   layers:
   - Default
   - TransparentFX
@@ -49,4 +50,7 @@ TagManager:
     locked: 0
   - name: Towers
     uniqueID: 2302295993
+    locked: 0
+  - name: Shop
+    uniqueID: 4140785131
     locked: 0

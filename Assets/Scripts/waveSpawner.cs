@@ -37,27 +37,30 @@ public class WaveSpawner : MonoBehaviour
     IEnumerator SpawnWave()
     {
         Wave wave = waves[waveIndex];
-        for (int z = 0; z < wave.enemies.Length; z++)
+        if(wave != null)
         {
-            //update enemies alive
-            nrofEnemies = nrofEnemies + wave.enemies[z].count;
-            Debug.Log("nr of enemies" + nrofEnemies);
-            EnemiesAliveText.text = Mathf.Ceil(nrofEnemies).ToString();
+            for (int z = 0; z < wave.enemies.Length; z++)
+            {
+                //update enemies alive
+                nrofEnemies = nrofEnemies + wave.enemies[z].count;
+                Debug.Log("nr of enemies" + nrofEnemies);
+                EnemiesAliveText.text = Mathf.Ceil(nrofEnemies).ToString();
 
-            for (int i = 0; i < wave.enemies[z].count; i++)
-            {
-                SpawnEnemy(wave.enemies[z].enemy);
-                
-                yield return new WaitForSeconds(1f / wave.spawnRate);
+                for (int i = 0; i < wave.enemies[z].count; i++)
+                {
+                    SpawnEnemy(wave.enemies[z].enemy);
+
+                    yield return new WaitForSeconds(1f / wave.spawnRate);
+                }
+
+                if (waveIndex == waves.Length)
+                {
+                    Debug.Log("TODO - End Level");
+                    this.enabled = false;
+                }
             }
-            
-            if (waveIndex == waves.Length)
-            {
-                Debug.Log("TODO - End Level");
-                this.enabled = false;
-            }
+            waveIndex++;
         }
-        waveIndex++;
     }
 
     void SpawnEnemy(GameObject enemy)

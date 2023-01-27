@@ -4,11 +4,12 @@ using UnityEngine;
 public class buildManager : MonoBehaviour
 {
     public static buildManager instance;
+
     void Awake()
     { 
         if (instance != null)
         {
-            Debug.LogError("more than one buildmaneger");
+            Debug.LogError("more than one buildmanager");
             return;
         }
        instance = this;
@@ -21,31 +22,25 @@ public class buildManager : MonoBehaviour
     public GameObject Level4piet;
 
     private TowerBlueprint TowerToBuild;
-    //private tile selectedtile;
-   
-
-    //public void Selecttile(tile tile)
-   // {
-    ///    selectedtile = tile;
-    //    TowerTobuild = null;
-
-  //  }
-
-   
 
     public bool CanBuild { get { return TowerToBuild != null; } }
  
     public void BuildTowerOn(tile tile)
     {
-        if (PlayerStats.Money < TowerToBuild.cost)
+        if (PlayerStats.Money < TowerToBuild.Tower.Cost)
         {
             Debug.Log("not enough money");
             return;
         }
-        PlayerStats.Money = PlayerStats.Money - TowerToBuild.cost;
-        GameObject turret = (GameObject)Instantiate(TowerToBuild.prefab, tile.GetBuildPosition(), Quaternion.identity);
+        if (tile.currentturret != null)
+        {
+            Debug.Log("There is already a turret on this tile");
+            return;
+        }
+        PlayerStats.Money = PlayerStats.Money - TowerToBuild.Tower.Cost;
+        GameObject turret = Instantiate(TowerToBuild.prefab, tile.GetBuildPosition(), Quaternion.identity);
         tile.currentturret = turret;
-        Debug.Log("Tower build money left" + PlayerStats.Money);
+        TowerToBuild = null;
     }
     public void SelectTowerToBuild(TowerBlueprint turret)
     {

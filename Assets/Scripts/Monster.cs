@@ -13,6 +13,8 @@ public class Monster : MonoBehaviour
 
     public HealthBar HealthBar;
 
+    private bool alive = true;
+
     public static string TAG
     {
         get;
@@ -28,33 +30,26 @@ public class Monster : MonoBehaviour
         HealthBar.SetHealth(health, MaxHealth);
     }
 
-    void FixedUpdate()
-    {
-        //tempPos = transform.position;
-
-        //if (Input.GetKey(KeyCode.W)) { tempPos.y += 0.05f; }
-        //if (Input.GetKey(KeyCode.S)) { tempPos.y -= 0.05f; }
-        //if (Input.GetKey(KeyCode.D)) { tempPos.x += 0.05f; }
-        //if (Input.GetKey(KeyCode.A)) { tempPos.x -= 0.05f; }
-
-
-        //transform.position = tempPos;
-    }
-
     public void OnTriggerEnter2D(Collider2D other)
     {
         if (other.tag == "Projectile")
         {
-            Debug.Log(health);
-            Projectile projectile = other.GetComponent<Projectile>();
-            health -= projectile.damage;
-            HealthBar.SetHealth(health, MaxHealth);
-            Debug.Log(health);
-            Destroy(other.gameObject);
-            if (health <= 0)
+            if(health > 0)
             {
-                Destroy(gameObject);
+                Debug.Log(health);
+                Projectile projectile = other.GetComponent<Projectile>();
+                health -= projectile.Tower.Damage;
+                HealthBar.SetHealth(health, MaxHealth);
+                Debug.Log(health);
+                Destroy(other.gameObject);
+            }
+            if (health <= 0 && alive)
+            {
+                alive = false;
+                gameObject.GetComponentInChildren<BoxCollider2D>().isTrigger = false;
+                PlayerStats.Money += CoinsOnDeath;
                 WaveSpawner.nrofEnemies--;
+                Destroy(gameObject);
             }
         }
     }

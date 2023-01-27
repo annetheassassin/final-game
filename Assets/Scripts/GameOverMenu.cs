@@ -6,11 +6,17 @@ using UnityEngine.SceneManagement;
 public class GameOverMenu : MonoBehaviour
 {
     public static bool GameOver = true;
-    
+
     public GameObject DieUIPanel;
+    public static GameObject DieUIPanel_;
+
+    private void Start()
+    {
+        DieUIPanel_ = DieUIPanel;
+    }
 
     // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
             if(Input.GetKeyDown(KeyCode.Space))
             {
@@ -25,32 +31,32 @@ public class GameOverMenu : MonoBehaviour
             }
     }
 
-      public void Resume()
+    public static void Resume()
     {
-        DieUIPanel.SetActive(false);
+        DieUIPanel_.SetActive(false);
         Time.timeScale = 1f;
         GameOver = false;
     }
 
-    void Pause ()
+    public static void Pause ()
     {
-        DieUIPanel.SetActive(true);
+        DieUIPanel_.SetActive(true);
         Time.timeScale = 0f;
         GameOver = true;
     }   
 
-    public void Restart()
+    public static void Restart()
     {
         Time.timeScale = 1f;
         GameOver = false;
-        DieUIPanel.SetActive(false);
+        DieUIPanel_.SetActive(false);
         SceneManager.LoadScene("test begin eindpunt route");
         WaveSpawner.nrofEnemies = 0;
         WaveSpawner.countdown = 15f;
         
     }
 
-    public void QuitGame()
+    public static void QuitGame()
     {
         Debug.Log ("Quitting game....");
         #if UNITY_STANDALONE

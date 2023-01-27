@@ -5,6 +5,6 @@ using UnityEngine;
  public class TowerBlueprint
 {
     public GameObject prefab;
-    public int cost;
+    public Tower Tower;
 
 }

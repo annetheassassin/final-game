@@ -860,6 +860,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   MaxHealth: 80
+  CoinsOnDeath: 20
   HealthBar: {fileID: 2209361376160158676}
 --- !u!61 &-8405056429930475478
 BoxCollider2D:
@@ -921,3 +922,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 2
+  Damage: 20
