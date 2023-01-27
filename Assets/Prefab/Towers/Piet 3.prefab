@@ -81,7 +81,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8348225902817909222, guid: 7cab6776d6a2fb141a1d573fccefbc7d, type: 3}
       propertyPath: Cost
-      value: 200
+      value: 250
       objectReference: {fileID: 0}
     - target: {fileID: 8348225902817909222, guid: 7cab6776d6a2fb141a1d573fccefbc7d, type: 3}
       propertyPath: Damage
@@ -89,7 +89,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8348225902817909222, guid: 7cab6776d6a2fb141a1d573fccefbc7d, type: 3}
       propertyPath: cooldownFrames
-      value: 60
+      value: 30
       objectReference: {fileID: 0}
     - target: {fileID: 8348225902817909222, guid: 7cab6776d6a2fb141a1d573fccefbc7d, type: 3}
       propertyPath: ProjectilesPrefab

@@ -10,9 +10,14 @@ public class GameOverMenu : MonoBehaviour
     public GameObject DieUIPanel;
     public static GameObject DieUIPanel_;
 
+    public Camera Camera;
+    public static Camera Camera_;
+
+
     private void Start()
     {
         DieUIPanel_ = DieUIPanel;
+        Camera_ = Camera;
     }
 
     // Update is called once per frame
@@ -40,6 +45,7 @@ public class GameOverMenu : MonoBehaviour
 
     public static void Pause ()
     {
+        Camera_.GetComponent<AudioSource>().pitch = 0.44F;
         DieUIPanel_.SetActive(true);
         Time.timeScale = 0f;
         GameOver = true;
@@ -53,7 +59,8 @@ public class GameOverMenu : MonoBehaviour
         SceneManager.LoadScene("test begin eindpunt route");
         WaveSpawner.nrofEnemies = 0;
         WaveSpawner.countdown = 15f;
-        
+        Camera_.GetComponent<AudioSource>().pitch = 1F;
+
     }
 
     public static void QuitGame()

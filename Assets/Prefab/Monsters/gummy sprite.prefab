@@ -290,8 +290,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 66e5c9b85fab0224bacc73dcd67f0ae2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MaxHealth: 80
-  CoinsOnDeath: 20
+  MaxHealth: 250
+  CoinsOnDeath: 50
   HealthBar: {fileID: 1516679498404717892}
 --- !u!61 &7094077017909614030
 BoxCollider2D:
