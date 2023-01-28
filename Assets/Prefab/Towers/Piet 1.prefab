@@ -79,6 +79,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Piet 1
       objectReference: {fileID: 0}
+    - target: {fileID: 7088813059421654298, guid: 7cab6776d6a2fb141a1d573fccefbc7d, type: 3}
+      propertyPath: m_Color.a
+      value: 0.27450982
+      objectReference: {fileID: 0}
     - target: {fileID: 8348225902817909222, guid: 7cab6776d6a2fb141a1d573fccefbc7d, type: 3}
       propertyPath: Cost
       value: 80
