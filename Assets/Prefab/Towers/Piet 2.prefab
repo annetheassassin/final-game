@@ -116,7 +116,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ProjectilesPrefab: {fileID: 8088439795632137864, guid: 6ef1fbae14855b948b7bcf6e7b6bf9a6, type: 3}
-  cooldownFrames: 25
+  cooldownFrames: 12
   Damage: 10
   Cost: 150
   projectileSpeed: 0.3

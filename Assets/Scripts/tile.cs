@@ -21,6 +21,7 @@ public class tile : MonoBehaviour
     {
        buildManager = buildManager.instance;
        Canvas = canvas;   
+        Debug.Log(Canvas);
 
         
     }

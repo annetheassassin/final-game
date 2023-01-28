@@ -32898,6 +32898,11 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 3672586627061729253, guid: ddac09fd08c750a408ca3c8d719d9f73, type: 3}
   m_PrefabInstance: {fileID: 1150387039}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1151293916 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4479987009427270720, guid: e67dee0df6a75d6459bf93bd530e8ebd, type: 3}
+  m_PrefabInstance: {fileID: 2027667274}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1152789027
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -37344,13 +37349,37 @@ MonoBehaviour:
   - spawnRate: 2
     enemies:
     - enemy: {fileID: 9060865380614691380, guid: d8092fb3fb812464db932de098cd14a4, type: 3}
-      count: 20
-    - enemy: {fileID: 9060865380614691380, guid: 473f60b0f1b0199448215d360cd864f3, type: 3}
+      count: 12
+  - spawnRate: 3
+    enemies:
+    - enemy: {fileID: 9060865380614691380, guid: d8092fb3fb812464db932de098cd14a4, type: 3}
       count: 10
+    - enemy: {fileID: 9060865380614691380, guid: 473f60b0f1b0199448215d360cd864f3, type: 3}
+      count: 2
+  - spawnRate: 1.5
+    enemies:
+    - enemy: {fileID: 2167003755322765204, guid: 95e95e77aa1ff3c4a8ac11a0dddae206, type: 3}
+      count: 1
+    - enemy: {fileID: 9060865380614691380, guid: 473f60b0f1b0199448215d360cd864f3, type: 3}
+      count: 5
+    - enemy: {fileID: 9060865380614691380, guid: d8092fb3fb812464db932de098cd14a4, type: 3}
+      count: 8
+  - spawnRate: 2
+    enemies:
+    - enemy: {fileID: 2167003755322765204, guid: 95e95e77aa1ff3c4a8ac11a0dddae206, type: 3}
+      count: 3
+    - enemy: {fileID: 8650007565475308253, guid: 6d4e21ad7295a70468e5bfe2ddf0f8dc, type: 3}
+      count: 8
+  - spawnRate: 4
+    enemies:
     - enemy: {fileID: 2167003755322765204, guid: 95e95e77aa1ff3c4a8ac11a0dddae206, type: 3}
       count: 7
+    - enemy: {fileID: 9060865380614691380, guid: d8092fb3fb812464db932de098cd14a4, type: 3}
+      count: 20
+    - enemy: {fileID: 2167003755322765204, guid: 95e95e77aa1ff3c4a8ac11a0dddae206, type: 3}
+      count: 6
     - enemy: {fileID: 8650007565475308253, guid: 6d4e21ad7295a70468e5bfe2ddf0f8dc, type: 3}
-      count: 5
+      count: 12
   spawnPoint: {fileID: 983538507}
   timeBetweenWaves: 60
   EnemiesAliveText: {fileID: 643176551}
@@ -37368,7 +37397,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   startHealth: 600
-  startMoney: 400
+  startMoney: 500
   healthBar: {fileID: 86306779}
 --- !u!1001 &1315062387
 PrefabInstance:
@@ -59571,6 +59600,10 @@ PrefabInstance:
       propertyPath: Camera
       value: 
       objectReference: {fileID: 304473955}
+    - target: {fileID: 73531757517379619, guid: e67dee0df6a75d6459bf93bd530e8ebd, type: 3}
+      propertyPath: PauseMenuUI
+      value: 
+      objectReference: {fileID: 1151293916}
     - target: {fileID: 277891209985470240, guid: e67dee0df6a75d6459bf93bd530e8ebd, type: 3}
       propertyPath: m_Enabled
       value: 1
@@ -59905,6 +59938,10 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4479987009427270722, guid: e67dee0df6a75d6459bf93bd530e8ebd, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4479987009427270723, guid: e67dee0df6a75d6459bf93bd530e8ebd, type: 3}
       propertyPath: m_AnchoredPosition.x
       value: -462
@@ -60029,7 +60066,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6091603609341450333, guid: e67dee0df6a75d6459bf93bd530e8ebd, type: 3}
       propertyPath: m_text
-      value: 500
+      value: 1000
       objectReference: {fileID: 0}
     - target: {fileID: 6356642430058215946, guid: e67dee0df6a75d6459bf93bd530e8ebd, type: 3}
       propertyPath: m_Enabled

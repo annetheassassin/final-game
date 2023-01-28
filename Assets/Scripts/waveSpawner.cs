@@ -19,11 +19,16 @@ public class WaveSpawner : MonoBehaviour
 
     void Update () 
     {
-        if (countdown < 0f)
+        if (countdown < 0f || (nrofEnemies == 0 && waveIndex > 0))
         {
-            StartCoroutine(SpawnWave());
-            countdown = timeBetweenWaves;
-            return;
+            if (waves[waveIndex] != null)
+            {
+                PlayerStats.Money += 100;
+                StartCoroutine(SpawnWave());
+                countdown = timeBetweenWaves;
+                return;
+            }
+            Debug.Log("Je hebt gewonnen!");
         }
 
         waveCountDownText.text = Mathf.Ceil(countdown).ToString();
