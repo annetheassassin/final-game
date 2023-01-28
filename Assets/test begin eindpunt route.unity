@@ -60101,6 +60101,18 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4479987008931746480, guid: e67dee0df6a75d6459bf93bd530e8ebd, type: 3}
+      propertyPath: m_FontData.m_Alignment
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 4479987008931746486, guid: e67dee0df6a75d6459bf93bd530e8ebd, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 187.9857
+      objectReference: {fileID: 0}
+    - target: {fileID: 4479987008931746486, guid: e67dee0df6a75d6459bf93bd530e8ebd, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 359.6
+      objectReference: {fileID: 0}
     - target: {fileID: 4479987008931746487, guid: e67dee0df6a75d6459bf93bd530e8ebd, type: 3}
       propertyPath: m_Layer
       value: 0
