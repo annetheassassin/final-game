@@ -9,10 +9,11 @@ public class WaveSpawner : MonoBehaviour
     public Transform spawnPoint;
 
     public float timeBetweenWaves = 0f;
-    public static float countdown = 15f;
+    public static float countdown = 3f;
     
     public Text EnemiesAliveText;
     public Text waveCountDownText;
+    public Text waveCount;
     public static int nrofEnemies = 0;
 
     private int waveIndex = 0;
@@ -21,20 +22,32 @@ public class WaveSpawner : MonoBehaviour
     {
         if (countdown < 0f || (nrofEnemies == 0 && waveIndex > 0))
         {
-            if (waves[waveIndex] != null)
+            if (waveIndex != waves.Length)
             {
                 PlayerStats.Money += 100;
                 StartCoroutine(SpawnWave());
+                waveIndex++;
                 countdown = timeBetweenWaves;
+                waveCount.text = waveIndex.ToString();
                 return;
             }
-            Debug.Log("Je hebt gewonnen!");
+            if (waveIndex == waves.Length && nrofEnemies == 0)
+            {
+                Debug.Log("Je hebt gewonnen!");
+            }
+            
         }
-
-        waveCountDownText.text = Mathf.Ceil(countdown).ToString();
-        countdown -= Time.deltaTime;
-
         EnemiesAliveText.text = Mathf.Ceil(nrofEnemies).ToString();
+        if (waveIndex != waves.Length)
+        {
+            waveCountDownText.text = Mathf.Ceil(countdown).ToString();
+            countdown -= Time.deltaTime;
+        }
+        else
+        {
+            waveCountDownText.text = "Final Wave";
+        }
+       
 
 
     }
@@ -57,14 +70,7 @@ public class WaveSpawner : MonoBehaviour
 
                     yield return new WaitForSeconds(1f / wave.spawnRate);
                 }
-
-                if (waveIndex == waves.Length)
-                {
-                    Debug.Log("TODO - End Level");
-                    this.enabled = false;
-                }
             }
-            waveIndex++;
         }
     }
 
