@@ -33,6 +33,7 @@ public class WaveSpawner : MonoBehaviour
             }
             if (waveIndex == waves.Length && nrofEnemies == 0)
             {
+                WinMenu.Pause();
                 Debug.Log("Je hebt gewonnen!");
             }
             
